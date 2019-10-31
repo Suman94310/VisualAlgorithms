@@ -1,0 +1,24 @@
+.center{
+    margin-top: 3px;
+}
+
+.btn{
+    border-radius: 0;
+}
+
+.form-control-range{
+    margin-top: 8px;
+}
+
+.btn-dark{
+    margin-right: 2px;
+}
+
+.range-label{
+    margin-top: 8px;
+}
+
+.bar{
+    margin: 1px;
+    background: "#8c8c8c";
+}
