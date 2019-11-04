@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom'
+import {HashRouter, BrowserRouter, Switch, Route} from 'react-router-dom'
 
 // material ui imports
 
@@ -17,10 +17,14 @@ function App() {
     <div className="App">
         <Navbar/>
         <BrowserRouter>
-          <Route exact path = "/" render = {() =><Home/>}/>
-          <Route exact path = "/home" render = {() =><Home/>}/>
-          <Route path="/sorting-visualiser" render = {() =><Sorting/>}/>
-          <Route path = "/searching-visualiser" render = {()=><Searching/>}/>
+            <div>
+            <Switch>
+              <Route exact path = "/" render = {() =><Home/>}/>
+              <Route exact path = "/home" render = {() =><Home/>}/>
+              <Route exact path="/sorting-visualiser#/" render = {() =><Sorting/>}/>
+              <Route exact path = "/searching-visualiser" render = {()=><Searching/>}/>
+            </Switch>
+            </div>
         </BrowserRouter>
     </div>
   );
