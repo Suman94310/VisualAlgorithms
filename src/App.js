@@ -21,7 +21,7 @@ function App() {
             <Switch>
               <Route exact path = "/" render = {() =><Home/>}/>
               <Route exact path = "/home" render = {() =><Home/>}/>
-              <Route exact path="/sorting-visualiser#/" render = {() =><Sorting/>}/>
+              <Route exact path="/sorting-visualiser" render = {() =><Sorting/>}/>
               <Route exact path = "/searching-visualiser" render = {()=><Searching/>}/>
             </Switch>
             </div>
