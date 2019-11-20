@@ -46,6 +46,8 @@ export default class Sorting extends React.Component{
 
     animations = []
 
+    //========================================
+
     insertionSort = ()=>{
         var List = Object.assign([], this.state.list)
         let list_size = this.state.listSize
@@ -95,7 +97,67 @@ export default class Sorting extends React.Component{
             },i*100)
         }
     }
+
+    //=================Merge sort=====================
     
+    doMergeSort = ()=>{
+        let list = Object.assign([], this.state.list)
+        this.mergeSort(list)
+        this.animateMergeSort()
+    }
+
+    mergeSort = (list, first_id=0)=>{
+        if(list.length <= 1){
+            return(list)
+        }
+        else{
+            let left =  list.slice(0,Math.floor(list.length/2))
+            let right = list.slice(Math.floor(list.length/2),list.length)
+            return(this.merge(this.mergeSort(left,first_id),this.mergeSort(right,first_id+Math.floor(list.length/2)),first_id))
+        }
+    }
+
+    merge = (left,right,first_id)=>{
+        let newList = []
+        let i = 0
+        let j = 0
+        while (i<left.length || j<right.length){
+            if(i === left.length){
+                newList.push(right[j])
+                this.animations.push([first_id+left.length+j,first_id+i+j])
+                j++
+            }
+            else if(j === right.length ||left[i]<=right[j]){
+                newList.push(left[i])
+                i++
+            }
+            else{
+                newList.push(right[j])
+                this.animations.push([first_id+left.length+j,first_id+i+j])
+                j++
+            }
+        }
+
+        return(newList)
+    }
+
+    animateMergeSort = ()=>{
+        console.log(this.animations)
+        let list = Object.assign([], this.state.list)
+        for(let i=0; i<this.animations.length;i++){
+            setTimeout(()=>{
+                let val = list[this.animations[i][0]]
+                console.log(this.animations[i][0],this.animations[i][1])
+                for(let j=this.animations[i][0]; j>this.animations[i][1]; j--){
+                    list[j] = list[j-1]
+                }
+                list[this.animations[i][1]] = val
+                this.setState({list:list})
+            },100*i)
+        }
+    }
+
+    //====================Render=======================
     render(){
         return(
             <div className="container">
@@ -119,7 +181,7 @@ export default class Sorting extends React.Component{
                         <button type="button" class="btn btn-dark" onClick = {()=>{this.generateRandomList()}}>Generate List</button>
                     </div>
                     <div className="col center">
-                        <button type="button" class="btn btn-success" onClick = {()=>this.insertionSort()}>Sort</button>
+                        <button type="button" class="btn btn-success" onClick = {()=>this.doMergeSort()}>Sort</button>
                     </div>
                 </div>
                 <div className="row" id="barContainer">
