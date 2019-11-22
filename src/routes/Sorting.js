@@ -46,7 +46,7 @@ export default class Sorting extends React.Component{
 
     animations = []
 
-    //========================================
+    //==================insertion sort======================
 
     insertionSort = ()=>{
         var List = Object.assign([], this.state.list)
@@ -101,6 +101,7 @@ export default class Sorting extends React.Component{
     //=================Merge sort=====================
     
     doMergeSort = ()=>{
+        this.animations = []
         let list = Object.assign([], this.state.list)
         this.mergeSort(list)
         this.animateMergeSort()
@@ -146,6 +147,12 @@ export default class Sorting extends React.Component{
         let list = Object.assign([], this.state.list)
         for(let i=0; i<this.animations.length;i++){
             setTimeout(()=>{
+                if(i>0){
+                    document.getElementById(this.animations[i-1][0]).style.background = "#8c8c8c"
+                    document.getElementById(this.animations[i-1][1]).style.background = "#8c8c8c"
+                }
+                document.getElementById(this.animations[i][0]).style.background = "#bcb6ff"
+                document.getElementById(this.animations[i][1]).style.background = "#a9fff7"
                 let val = list[this.animations[i][0]]
                 console.log(this.animations[i][0],this.animations[i][1])
                 for(let j=this.animations[i][0]; j>this.animations[i][1]; j--){
@@ -153,7 +160,7 @@ export default class Sorting extends React.Component{
                 }
                 list[this.animations[i][1]] = val
                 this.setState({list:list})
-            },100*i)
+            },1000*i)
         }
     }
 

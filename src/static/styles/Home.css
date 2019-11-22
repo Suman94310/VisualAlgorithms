@@ -1,3 +1,18 @@
 .body{
     background: url("../images/home-background.jpg");
 }
+
+.banner{
+    background: url(../images/home-bg.jpg);
+}
+
+
+.banner-text{
+    color: white;
+    position: relative;
+    top: -250px;
+}
+
+.banner-text h1{
+    font-weight: 100;
+}
