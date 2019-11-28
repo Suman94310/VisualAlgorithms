@@ -1,6 +1,10 @@
 import React from "react"
 
 export default class Navbar extends React.Component{
+
+    componentDidMount=()=>{
+        console.log(document.getElementsByClassName("navbar")[0].style.background = "transparent")
+    }
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">

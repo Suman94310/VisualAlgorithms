@@ -1,7 +1,7 @@
 import React from 'react'
 import "../static/styles/Home.css"
 import Particles from 'react-particles-js';
-import { number } from 'prop-types';
+// import { number } from 'prop-types';
 
 
 export default class Home extends React.Component{
@@ -15,6 +15,8 @@ export default class Home extends React.Component{
 
     componentDidMount=()=>{
         this.centerBannerText()
+        // this.manageNavbar()
+        // console.log(screen.width)
     }
 
     render(){
@@ -35,7 +37,8 @@ export default class Home extends React.Component{
                         }}
                     />
                     <div className="banner-text">
-                        <h1>Visual Algos</h1>
+                        <h1>Visualgorithm</h1>
+                        <h1>s</h1>
                     </div>
                 </div>
             </div>

@@ -12,6 +12,7 @@ import Searching from "./routes/Searching"
 // importing components
 import Navbar from "./components/Navbar"
 
+
 function App() {
   return (
     <div className="App">
@@ -29,5 +30,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
