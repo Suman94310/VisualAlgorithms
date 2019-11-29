@@ -23,4 +23,31 @@
 .banner-text :last-child{
     color: black;
     background: white;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes blink{
+    0%{
+        color: black;
+        background: white;
+    }
+    50%{
+        color: black;
+        background: white;
+    }
+    51%{
+        color: white;
+        background: transparent;
+    }
+    100%{
+        color: white;
+        background: transparent;
+    }
+}
+
+.categories{
+    margin-top: 30px;
 }
