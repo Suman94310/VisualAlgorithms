@@ -6,6 +6,9 @@ import Particles from 'react-particles-js';
 //===========importing image ==============
 import card from "../static/images/code.jpg"
 
+//==========importing category card===========
+import Category from "../components/Category"
+
 
 export default class Home extends React.Component{
 
@@ -50,64 +53,20 @@ export default class Home extends React.Component{
                 </div>
                 <div className = "categories container">
                     <div className = "row">
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className = "row">
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div className = "row">
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
-                        <div class="card col" style={{"max-width": "18rem", margin:"auto"}}>
-                            <img src={card} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <p class="card-text">Some quick example </p>
-                            </div>
-                        </div>
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
+                    
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
+                   
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
+                        <Category image = {card} />
                     </div>
                 </div>
             </div>
